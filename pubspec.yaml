@@ -1,7 +1,6 @@
 ---
 dependencies:
   cupertino_icons: ^1.0.8
-  export_video_frame: ^0.0.7
   firebase_storage: ^12.3.4
   flutter:
     sdk: flutter

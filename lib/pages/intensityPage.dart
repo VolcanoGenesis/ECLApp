@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:export_video_frame/export_video_frame.dart';
+// import 'package:export_video_frame/export_video_frame.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
@@ -167,40 +167,40 @@ class _IntensityCalculator extends State<IntensityCalculator> {
     }
   }
 
-  Future recordVideo() async {
-    // var status = await Permission.accessMediaLocation.status
-    // await PermissionHandler().requestPermissions([PermissionGroup.storage]);
-
-    // Permission.storage.request();
-
-    // final String path =
-    //     await getApplicationDocumentsDirectory().then((value) => value.path);
-    // log(path);
-
-    videoFile = await _picker.pickVideo(
-        source: ImageSource.camera, maxDuration: const Duration(seconds: 6));
-    setState(() {
-      _inProcess = true;
-    });
-    // videoFile.
-    List<File> images =
-        await ExportVideoFrame.exportImage(videoFile!.path, 360, 1);
-    double first = 0;
-    for (File img in images) {
-      calculateEcl(img);
-      if (intensity > first) {
-        first = intensity;
-        _selectedFile = img;
-      }
-    }
-    cropImage(XFile(_selectedFile!.path));
-    calculateEcl(_selectedFile);
-    videoFile = null;
-    images.clear();
-    setState(() {
-      _inProcess = false;
-    });
-  }
+  // Future recordVideo() async {
+  //   // var status = await Permission.accessMediaLocation.status
+  //   // await PermissionHandler().requestPermissions([PermissionGroup.storage]);
+  //
+  //   // Permission.storage.request();
+  //
+  //   // final String path =
+  //   //     await getApplicationDocumentsDirectory().then((value) => value.path);
+  //   // log(path);
+  //
+  //   videoFile = await _picker.pickVideo(
+  //       source: ImageSource.camera, maxDuration: const Duration(seconds: 6));
+  //   setState(() {
+  //     _inProcess = true;
+  //   });
+  //   // videoFile.
+  //   List<File> images =
+  //       await ExportVideoFrame.exportImage(videoFile!.path, 360, 1);
+  //   double first = 0;
+  //   for (File img in images) {
+  //     calculateEcl(img);
+  //     if (intensity > first) {
+  //       first = intensity;
+  //       _selectedFile = img;
+  //     }
+  //   }
+  //   cropImage(XFile(_selectedFile!.path));
+  //   calculateEcl(_selectedFile);
+  //   videoFile = null;
+  //   images.clear();
+  //   setState(() {
+  //     _inProcess = false;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -257,13 +257,13 @@ class _IntensityCalculator extends State<IntensityCalculator> {
                               style: TextStyle(color: Colors.white),
                             ),
                             onPressed: () {
-                              recordVideo().whenComplete(() {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('Finished!'),
-                                  ),
-                                );
-                              });
+                              // recordVideo().whenComplete(() {
+                              //   ScaffoldMessenger.of(context).showSnackBar(
+                              //     const SnackBar(
+                              //       content: Text('Finished!'),
+                              //     ),
+                              //   );
+                              // });
                             }),
                         MaterialButton(
                             color: Colors.deepOrange,
