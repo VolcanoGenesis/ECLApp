@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:test1/components/myDrawer.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:test1/components/myDrawer.dart';
 
 class ConnectPage extends StatefulWidget {
+  const ConnectPage({super.key});
+
   @override
   _ConnectPageState createState() => _ConnectPageState();
 }
@@ -52,13 +55,13 @@ class _ConnectPageState extends State<ConnectPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: MyDrawer(),
+        drawer: const NavigationDrawer1(),
         appBar: AppBar(
-          title: Text('ECLSTAT 3.0'),
+          title: const Text('ECLSTAT 3.0'),
           centerTitle: true,
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'BPHC',
                 style: TextStyle(fontSize: 12),
@@ -68,7 +71,7 @@ class _ConnectPageState extends State<ConnectPage> {
         ),
         body: Center(
           child: _loading
-              ? CircularProgressIndicator()
+              ? const CircularProgressIndicator()
               : _dataList.isNotEmpty
                   ? ListView.builder(
                       itemCount: _dataList.length,
@@ -77,8 +80,9 @@ class _ConnectPageState extends State<ConnectPage> {
                           title: Text(
                             DateFormat('yyyy-MM-dd HH:mm').format(
                                 DateTime.parse(_dataList[index]['timestamp'])
-                                    .add(Duration(hours: 5, minutes: 30))),
-                            style: TextStyle(fontSize: 18),
+                                    .add(
+                                        const Duration(hours: 5, minutes: 30))),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           subtitle: Text(
                             'Mean Intensity: ${_dataList[index]['meanIntensity']} Glucose Level: ${_dataList[index]['glucoseLevel']}', // Display meanIntensity
@@ -86,11 +90,11 @@ class _ConnectPageState extends State<ConnectPage> {
                         );
                       },
                     )
-                  : Text('${_error}'),
+                  : Text(_error),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: fetchData,
-          child: Text('Fetch Data'),
+          child: const Text('Fetch Data'),
         ));
   }
 }

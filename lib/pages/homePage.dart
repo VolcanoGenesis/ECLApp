@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:test1/components/myDrawer.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -11,13 +13,13 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MyDrawer(),
+      drawer: const NavigationDrawer1(),
       appBar: AppBar(
-        title: Text('ECLSTAT 3.0'),
+        title: const Text('ECLSTAT 3.0'),
         centerTitle: true,
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Text(
               'BPHC',
               style: TextStyle(fontSize: 12),
