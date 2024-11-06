@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:test1/pages/aboutusPage.dart';
 import 'package:test1/pages/connectPage.dart';
 import 'package:test1/pages/homePage.dart';
-import 'package:test1/pages/intensityPage.dart';
 
 class NavigationDrawer1 extends StatelessWidget {
   const NavigationDrawer1({super.key});
@@ -25,11 +24,6 @@ class NavigationDrawer1 extends StatelessWidget {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const HomePage(),
-        ));
-        break;
-      case 1:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const IntensityCalculator(),
         ));
         break;
       case 2:
@@ -71,10 +65,6 @@ class NavigationDrawer1 extends StatelessWidget {
                           text: "Home",
                           icon: Icons.home,
                           onClicked: () => selectPage(context, 0)),
-                      buildMenuItem(
-                          text: "Intensity Calculator",
-                          icon: Icons.contacts,
-                          onClicked: () => selectPage(context, 1)),
                       buildMenuItem(
                           text: "About Us",
                           icon: Icons.contacts,
