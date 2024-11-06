@@ -6,11 +6,11 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        title: Text('ECLSTAT 3.0'),
+        title: const Text('ECLSTAT 3.0'),
         centerTitle: true,
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Text(
               'BPHC',
               style: TextStyle(fontSize: 12),
