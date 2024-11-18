@@ -24,7 +24,7 @@ class _AboutUs extends State<AboutUs> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/EmbeddedImage.png', // Replace with your image asset path
+                'Assets/EmbeddedImage.png', // Replace with your image asset path
                 width: 200, // Set width or height as desired
                 height: 150,
                 fit: BoxFit.cover, // Adjust to control image fitting
@@ -33,7 +33,12 @@ class _AboutUs extends State<AboutUs> {
               const Text(
                 'MEMS, Microfluidics and Nanoelectronics Lab is a collaborative effort across the departments at BITS-Pilani, Hyderabad Campus. The lab is spread across 2500 sqft. It has various fabrication, characterization and testing facilities. The lab majorly focuses on the development of miniaturized sensing/monitoring devices for various Energy, Biomedical and Biochemical applications.',
                 textAlign: TextAlign.justify,
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 12),
+              ),
+              const Spacer(), // Pushes the following widget to the bottom
+              const Text(
+                'Developed by Aditya Ranjan',
+                style: TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
               ),
             ],
           ),
